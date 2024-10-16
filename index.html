@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <main>
+    <header>
+      <h1 style="color: rgb(221, 222, 222);">Dictionary App</h1><br>
+      <p>Get meaning for a word with a single click</p>
+    </header>
+
+    <section>
+
+      <!-- FORM CONTAINER -->
+      <div class="form-container" id="formContainer">
+        <form id="form" class="form">
+          <label class="label">
+            <h1  class="heroText" style="color: white;">Enter Word</h1>
+          </label>
+
+          <!-- Desktop Input -->
+            <input type="text" name="word" id="WordInput" placeholder="Enter a word e.g Competence" required>
+            <ion-icon name="search-outline"></ion-icon><br>
+
+            
+          <!-- Mobile Input for Media Querry -->
+          <!-- <div class="mobileSearch-bar">
+            <input type="text" name="word" id="mobileInput" placeholder="Search word..." required>
+            <ion-icon name="search-outline"></ion-icon><br>
+          </div> -->
+
+
+          <!-- Form submit button -->
+          <button  type="submit" id="submit"> Find Meaning!</button>
+        </form>
+
+                     <!-- loader -->
+         <!-- <div class="loader" id="loader"><div/> -->
+
+        <div class="displayContainer">
+
+          <!-- Display placeholder for Emoji and text -->
+          <div class="displayPlaceholder" id="displayPlaceholder">
+            <h1 id="emoji">&#128512</h1>
+            <h3 id="text">Hello There! Search for Any Word! </h3>
+          </div>
+
+        
+          <div id="result" class="result">
+            <h2 class="WordText" id="WordText">
+            </h2>
+            <p class="phonetics" id="phonetics"></p>
+            <p class="text-to-speech" id="textToSpeech" >
+              <ion-icon   name="volume-medium-outline"></ion-icon>
+            </p>
+
+            <!-- Different meanings for each parts of speech -->
+            <div class="meaning" id="meanings">
+              <li id="noun"></li>
+              <li id="verb"></li>
+              <li id="interjection"></li>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+
+
+
+
+
+  <script src="./script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

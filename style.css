@@ -1,0 +1,196 @@
+*{
+  margin:0; 
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+main{
+  background-color:#636365; 
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-size: 20PX;
+
+}
+
+header p{
+  color: aliceblue;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  
+}
+
+.label .heroText{
+  font-size:x-large;
+}
+
+.form-container{
+  background-color: rgb(201, 175, 171);
+  line-height: 30px;
+  width: 50vw;
+  padding: 4rem; 
+  border-radius: 5px;
+  /* height: 20rem; */
+  border: 1px solid white;
+  
+}
+
+.displayPlaceholder{
+  /* width: 100%; */
+  text-align: center;
+  margin-top: 25px;
+  display: flex;
+  flex-direction:column;
+}
+
+.emoji {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form input{
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+.mobileSearch-bar{
+  display: none;
+}
+
+.form ion-icon{
+  position: absolute;
+  margin-left:-25px;
+  margin-top: 8px;
+  font-size: large;
+}
+
+.result p ion-icon{
+  display: none;
+}
+
+li{
+  list-style-type:none;
+}
+
+#submit{
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  background-color: #153243;
+  color: whitesmoke;
+  border: none;
+}
+
+#submit:hover{
+  background-color: #3d99a1;
+  box-shadow: black;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+#checkboxinput{
+  display: none;
+}
+
+.toggleswitch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 70px;
+  height: 30px;
+  background-color: rgba(199, 199, 199);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.toggleswitch::after{
+  content: "";
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  left: 0px;
+  right: 0px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition-duration: 0.5s;
+  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.308);
+}
+
+/* switch the background color */
+
+#checkboxinput:checked + .toggleswitch{
+background-color: #000000;
+transition-duration: 0.3s;
+}
+
+/* to move the toggle */
+
+#checkboxinput:checked + .toggleswitch:after{
+  transform: translateX(100%);
+  transition-duration: 0.3s;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width:680px ) {
+
+  .form-container{
+     font-size: 10px; 
+   
+  }
+
+  .form ion-icon{
+    font-size: medium;
+  }
+
+  .mobileSearch-bar ion-icon{
+    position: absolute;
+    margin-left:-25px;
+    margin-top: 10px;
+    font-size: small;
+  } 
+
+  /* .form #wordInput, 
+  .form .wordIcon{
+    display: none;
+  } */
+
+  .heroText{
+    font-size: 19px;
+  }
+}
+
+
+.form .WordInput{
+  display: none;
+}
