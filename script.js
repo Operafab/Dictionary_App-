@@ -14,36 +14,26 @@ const verb = document.getElementById("verb");
 const interjection = document.getElementById("interjection");
 const emoji = document.getElementById("emoji");
 
+// adding event listener to form
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
 
-// form.addEventListener(()=>e.preventDefault()
-// )
-// // set initial state
+const initialState = () => {
+  result.style.display = "none"
+};
 
 // to get defintiion
 
-const getDefintion = async () => {
+const getDefintion = async (word) => {
   
-  const initialState = () => {
-    wordText.innerText = "";
-    phonetics.innerText = "";
-    textToSpeech.innerText = "";
-    meaningsContainer.innerHTML = "";
-    noun.innerText = "";
-    verb.innerText = "";
-    interjection.innerText = "";
-    emoji.innerText = "";
-  };
-
+  const word = wordInput.value
   try {
-    const word = wordInput.value.trim() || mobileInput.value.trim();
-
-    if (!word) {
-      initialState();
-    }
-
+    initialState()
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
+
     console.log(response);
     if (!response || !response.ok) {
       throw new Error("Network response was not ok");
@@ -57,35 +47,33 @@ const getDefintion = async () => {
 
     // to display the searched word and meaning
     wordText.innerText = wordData.word;
-    phonetics.innerText = wordData.phonetics[0]?.text || 'No phonetics available';
+    phonetics.innerText =
+      wordData.phonetics[0]?.text || "No phonetics available";
 
     // to clear previous meanings
-    noun.innerText = '';
-    verb.innerText = '';
-    interjection.innerText = '';
+    noun.innerText = "";
+    verb.innerText = "";
+    interjection.innerText = "";
 
     // using forEach method to get meanings
-    wordData.meanings.forEach(meaning => {
+    wordData.meanings.forEach((meaning) => {
       const partOfSpeech = meaning.partOfSpeech;
       const definition = meaning.definitions[0].definition;
 
-      if (partOfSpeech === 'noun') {
+      if (partOfSpeech === "noun") {
         noun.innerText = `Noun: ${definition}`;
-      } else if (partOfSpeech === 'verb') {
+      } else if (partOfSpeech === "verb") {
         verb.innerText = `Verb: ${definition}`;
-      } else if (partOfSpeech === 'interjection') {
+      } else if (partOfSpeech === "interjection") {
         interjection.innerText = `Interjection: ${definition}`;
       }
     });
-
-
-
   } catch (error) {
     console.log(error);
   }
 };
 
-getDefintion()
+getDefintion();
 // // to hide result section
 
 // // adding event listener to form
