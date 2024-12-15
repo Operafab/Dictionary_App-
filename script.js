@@ -45,7 +45,14 @@ async function getWordDefinition(word) {
     phonetics.innerText = wordData.phonetics[0]?.text || 'No phonetics available';
     
     
-    
+    // // textToSpeech.onclick = function () {
+    // //   if (wordData.phonetics[0]?.audio) {
+    // //     const audio = new Audio(wordData.phonetics[0].audio);
+    // //     audio.play();
+    // //   } else {
+    // //     alert('Pronunciation audio not available');
+    // //   }
+    // };
 
     // to clear previous meanings
     noun.innerText = '';
