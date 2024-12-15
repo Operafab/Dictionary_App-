@@ -42,8 +42,39 @@
           <button type="submit" id="submit"> Find Meaning!</button>
         </form>
 
+
         <!-- loader -->
         <!-- <div class="loader" id="loader"><div/> -->
+
+
+                     <!-- loader -->
+         <!-- <div class="loader" id="loader"><div/> -->
+
+        <div class="displayContainer">
+
+          <!-- Display placeholder for Emoji and text -->
+          <div class="displayPlaceholder" id="displayPlaceholder">
+            <h1 id="emoji">&#128512</h1>
+            <h3 id="text">Hello There! Search for Any Word! </h3>
+          </div>
+
+        
+          <div id="result" class="result">
+            <h2 class="WordText" id="WordText">
+            </h2>
+            <p class="phonetics" id="phonetics"></p>
+            <p class="text-to-speech" id="textToSpeech" >
+              <ion-icon   name="volume-medium-outline"></ion-icon>
+            </p>
+
+            <!-- Different meanings for each parts of speech -->
+            <div class="meaning" id="meanings">
+              <li id="noun"></li>
+              <li id="verb"></li>
+              <li id="interjection"></li>
+            </div>
+          </div>
+        </div>
 
 
       </div>
